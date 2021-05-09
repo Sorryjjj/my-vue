@@ -26,7 +26,7 @@
 
 import babel from 'rollup-plugin-babel';
 import serve from 'rollup-plugin-serve';
-
+import resolve from 'rollup-plugin-node-resolve';
 
 export default {
     input: './src/index.js',
@@ -45,6 +45,20 @@ export default {
             openPage: '/public/index.html',
             port: 3000,
             contentBase: ''
-        })
+        }),
+        resolve(),
+        // resolve({
+        //     mainFields: ['module', 'main'], // Default: ['module', 'main']
+        //     browser: true,  // Default: false
+        //     extensions: ['.mjs', '.js', '.jsx', '.json'],  // Default: [ '.mjs', '.js', '.json', '.node' ]
+        //     preferBuiltins: false,  // Default: true
+        //     jail: '/my/jail/path', // Default: '/'
+        //     only: ['some_module', /^@some_scope\/.*$/], // Default: null
+        //     modulesOnly: true, // Default: false
+        //     dedupe: ['react', 'react-dom'], // Default: []
+        //     customResolveOptions: {
+        //         moduleDirectory: 'js_modules'
+        //     }
+        // })
     ]
 }

@@ -1,7 +1,7 @@
-//重写数组方法
-
+// 获取数组原生方法
 let oldArrayMethods = Array.prototype;
 
+// 让arrayMethods通过__proto__能获取到数组的方法
 export let arrayMethods = Object.create(oldArrayMethods);
 
 const methods = [
